@@ -1,5 +1,6 @@
 package uk.co.ljefferies98;
 
+import org.rspeer.networking.dax.walker.DaxWalker;
 import org.rspeer.runetek.api.commons.math.Random;
 import org.rspeer.runetek.api.movement.Movement;
 import org.rspeer.runetek.api.movement.WebWalker;
@@ -10,7 +11,7 @@ import uk.co.ljefferies98.framework.NodeManager;
 import uk.co.ljefferies98.node.NodeSupplier;
 
 
-@ScriptMeta(developer = "lewis12321", name = "Potato Farmer", desc = "Picks Potatos", version = 0.024)
+@ScriptMeta(developer = "ljefferies98", name = "Potato Picker", desc = "Picks Potatos", version = 0.025)
 public class App extends Script {
 
     private NodeManager manager;
@@ -29,8 +30,9 @@ public class App extends Script {
         setBackgroundTasks();
     }
 
-    private void setBackgroundTasks() {
-        new EnergyChecker();
+    @Override
+    public int loop() {
+        return manager.execute(getLoopReturn());
     }
 
     private void setupNodes() {
@@ -40,9 +42,8 @@ public class App extends Script {
         manager.add(supplier.DEPOSIT);
     }
 
-    @Override
-    public int loop() {
-        return manager.execute(getLoopReturn());
+    private void setBackgroundTasks() {
+        new EnergyChecker();
     }
 
     public static int getLoopReturn() {

@@ -11,7 +11,7 @@ public class BackgroundTaskExecutor {
 
     private static ScheduledExecutorService getExecutor() {
         if(executor == null) {
-            executor = ExecutorUtil.newScheduledExecutorPool(3, Throwable::printStackTrace);
+            executor = ExecutorUtil.newScheduledExecutorPool(1, Throwable::printStackTrace);
         }
         return executor;
     }

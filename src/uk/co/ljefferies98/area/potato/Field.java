@@ -1,10 +1,11 @@
-package uk.co.ljefferies98.area;
+package uk.co.ljefferies98.area.potato;
 
+import org.rspeer.runetek.api.movement.position.Area;
 import org.rspeer.runetek.api.movement.position.Position;
 
-public class Area {
+public class Field {
 
-    public static final org.rspeer.runetek.api.movement.position.Area POTATO_FIELD = org.rspeer.runetek.api.movement.position.Area.polygonal(
+    public static final Area POTATO_FIELD = Area.polygonal(
             new Position[]{
                     new Position(3241, 3299, 0),
                     new Position(3241, 3304, 0),
@@ -21,7 +22,7 @@ public class Area {
             }
     );
 
-    public static final org.rspeer.runetek.api.movement.position.Area POTATO_FIELD_NORTH = org.rspeer.runetek.api.movement.position.Area.polygonal(
+    public static final Area POTATO_FIELD_NORTH = Area.polygonal(
             new Position[]{
                     new Position(3259, 3320, 0),
                     new Position(3266, 3320, 0),
@@ -30,7 +31,7 @@ public class Area {
             }
     );
 
-    public static final org.rspeer.runetek.api.movement.position.Area POTATO_FIELD_SOUTH = org.rspeer.runetek.api.movement.position.Area.polygonal(
+    public static final Area POTATO_FIELD_SOUTH = Area.polygonal(
             new Position[]{
                     new Position(3242, 3300, 0),
                     new Position(3242, 3303, 0),

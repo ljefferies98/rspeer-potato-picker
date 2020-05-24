@@ -2,6 +2,7 @@ package uk.co.ljefferies98.node.bank;
 
 import org.rspeer.runetek.adapter.scene.Player;
 import org.rspeer.runetek.api.commons.BankLocation;
+import org.rspeer.runetek.api.commons.Time;
 import org.rspeer.runetek.api.component.tab.Inventory;
 import org.rspeer.runetek.api.movement.Movement;
 import org.rspeer.runetek.api.scene.Players;
@@ -10,7 +11,7 @@ import uk.co.ljefferies98.framework.Node;
 
 public class WalkToBankNode implements Node {
 
-    BankLocation bank;
+    private BankLocation bank;
 
     @Override
     public boolean validate() {
@@ -27,6 +28,6 @@ public class WalkToBankNode implements Node {
 
     @Override
     public void execute() {
-        Movement.walkToRandomized(bank.getPosition());
+        Time.sleepUntil(() -> Movement.walkToRandomized(bank.getPosition()), 5000);
     }
 }

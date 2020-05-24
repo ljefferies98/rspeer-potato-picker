@@ -12,7 +12,7 @@ import uk.co.ljefferies98.framework.Node;
 
 public class DepositNode implements Node {
 
-    BankLocation bankLocation;
+    private BankLocation bankLocation;
 
     @Override
     public boolean validate() {
